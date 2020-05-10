@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "KayitOl";
+}
+
+@model Kullanici
+
+@section bolge
+{
+    <link href="~/Content/CalintiCSS.css" rel="stylesheet" />
+}
+
+<h2>Kayıt Ol</h2>
+
+<div id="id01">
+<div class="alert alert-danger">
+    @Html.ValidationSummary() <!-- Hata adeti kaç tane ise hepsini burada göster. -->
+</div>
+    <form class="modal-content" action="/Home/KayitOl" method="post">
+        <div class="container">
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.Adi)
+                @Html.TextBoxFor(x => x.Adi)
+                @Html.ValidationMessageFor(x => x.Adi)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.Soyadi)
+                @Html.TextBoxFor(x => x.Soyadi)
+                @Html.ValidationMessageFor(x => x.Soyadi)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.KullaniciAdi)
+                @Html.TextBoxFor(x => x.KullaniciAdi)
+                @Html.ValidationMessageFor(x => x.KullaniciAdi)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.EmailAdresi)
+                @Html.TextBoxFor(x => x.EmailAdresi)
+                @Html.ValidationMessageFor(x => x.EmailAdresi)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.Sifre)
+                @Html.TextBoxFor(x => x.Sifre)
+                @Html.ValidationMessageFor(x => x.Sifre)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.SifreTekrari)
+                @Html.TextBoxFor(x => x.SifreTekrari)
+                @Html.ValidationMessageFor(x => x.SifreTekrari)
+            </div>
+
+            <label>
+                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Beni hatırla
+            </label>
+
+            <p>Hesap oluşturarak şunu kabul etmiş olursunuz: <a href="#" style="color:dodgerblue">Gizlilik ve Şartlar</a>.</p>
+
+            <div class="clearfix">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">İptal</button>
+                <button type="submit" class="signupbtn">Kayıt Ol</button>
+            </div>
+        </div>
+    </form>
+</div>
